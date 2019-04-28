@@ -12,7 +12,7 @@
 }
 
 html {
-    font-size: 20px;
+    font-size: 24px;
     margin: 0;
     padding: 0;
 }
@@ -37,9 +37,8 @@ a:focus {
 }
 
 .container {
-    max-width: 40rem;
-    padding: 2rem 1rem 0 1rem;
-    text-align: center;
+    max-width: 30rem;
+    margin: 2rem 1rem 0 1rem;
 }
 
 .hero {
@@ -48,17 +47,27 @@ a:focus {
     padding-top: 1rem;
 }
 
-.more-details {
-    font-size: 2em;
-    letter-spacing: 0.05em;
-    line-height: 1; 
+section {
+    text-align: center;
+    margin-top: 4.5rem;
 }
 
-.calendar-invite-google {
+section:first-of-type {
+    margin-top: 0;
+}
+
+.heading-secondary {
+    font-size: 1.75em;
+    letter-spacing: 0.025em;
+    line-height: 1;
+}
+
+.button {
     border-radius: 0.5rem;
     background-color: #63847E;
     color: #FFFFFF;
-    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0.75rem;
     text-decoration: none;
 }
 
@@ -69,14 +78,24 @@ a:focus {
 
 .venue {
     font-size: 1.5em;
-    padding-bottom: 6rem;
-    max-width: 30rem;
+    margin: 0;
+    padding: 0;
+}
+
+.venue-more-info {
+    font-size: 0.8rem;
+    margin: 0.75rem 0 2rem 0;
+    padding: 0;
+}
+
+.hotel-transport {
     margin-top: 2rem;
 }
 
 .map {
     width: 100%;
     height: 26rem;
+    margin-top: 2rem;
 }
 
 
