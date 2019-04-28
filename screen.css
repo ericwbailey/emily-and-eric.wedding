@@ -18,11 +18,12 @@ html {
 }
 
 body {
+    align-items: center;
     display: flex;
     flex-direction: column;
     font-family: 'national_parkregular';
     font-size: 1em;
-    align-items: center;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
 }
@@ -100,8 +101,8 @@ section:first-of-type {
 
 
 @media screen and (min-width: 900px) {
-    html {
-        font-size: 24px;
+    body {
+        font-size: 1.2em;
     }
 
     .hero {
