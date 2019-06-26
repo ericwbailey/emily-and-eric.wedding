@@ -1,14 +1,30 @@
-@font-face {
-    font-family: 'national_parkregular';
-    src: url('nationalpark-regular-webfont.woff2') format('woff2'),
-         url('nationalpark-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+:root {
+    --color-forest: #265A60;
+    --color-lemon: #EDF6B3;
+    --color-obsidian: #081314;
+    --color-slime: #9FB827;
+    --color-teal: #4496A1;
+    --color-white: #FFFFFF;
+
+    --duration-quick: 200ms;
+    --duration-slow: 400ms;
+
+    --hero-position: 12vw;
+
+    --tracking-hairline: 0.05em;
+    --tracking-light: 0.1em;
+    --tracking-slight: 0.125em;
 }
 
 
-* {
+/* BASE */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
 html {
@@ -19,17 +35,16 @@ html {
 
 body {
     align-items: center;
+    background-color: var(--color-white);
+    color: var(--color-obsidian);
     display: flex;
     flex-direction: column;
-    font-family: 'national_parkregular';
+    font-family: "Nunito", sans-serif;
     font-size: 1em;
     line-height: 1.5;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-}
-
-a {
-    color: #63847E;
 }
 
 a:hover,
@@ -37,75 +52,327 @@ a:focus {
     text-decoration: none;
 }
 
-.container {
-    max-width: 30rem;
-    margin: 2rem 1rem 0 1rem;
-}
-
-.hero {
-    margin: 0 auto;
+img {
     width: 100%;
-    padding-top: 1rem;
+    height: auto;
 }
 
-section {
+
+/* TITLES */
+.title__hero {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: var(--tracking-slight);
+    margin-bottom: 1rem;
+}
+
+.title__subsection {
+    letter-spacing: var(--tracking-light);
+    margin-bottom: 0.75rem;
+}
+
+.title__primary {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: var(--tracking-light);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.title__secondary {
+    color: var(--color-slime);
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-transform: initial;
+}
+
+
+/* BUTTONS */
+.subsection a.button__subsection {
+    display: block;
+    background-color: var(--color-obsidian);
+    border-bottom: 0.25rem solid var(--color-forest);
+    border-radius: 7px;
+    color: var(--color-white);
+    margin-top: 2rem;
+    padding: 0.75rem 1rem;
     text-align: center;
-    margin-top: 4.5rem;
+    text-decoration: none;
+    transition: transform var(--duration-quick) ease-in-out;
 }
 
-section:first-of-type {
-    margin-top: 0;
+.subsection a.button__subsection:hover,
+.subsection a.button__subsection:focus {
+    transform: scale(1.05);
 }
 
-.heading-secondary {
-    font-size: 1.75em;
-    letter-spacing: 0.025em;
-    line-height: 1;
+.subsection a.button__subsection:active {
+    border-bottom-width: 0.1rem;
+    transform: scale(1.025);
+    transition: none;
 }
 
-.button {
-    border-radius: 0.5rem;
-    background-color: #63847E;
-    color: #FFFFFF;
-    margin-bottom: 2rem;
-    padding: 0.5rem 0.75rem;
+
+/* HERO */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__our-story {
+    background-color: var(--color-lemon);
+    color: var(--color-forest);
+    width: 30rem;
+    padding: 1rem 4rem;
+    text-align: center;
+    transform: rotate(-2deg);
+    position: relative;
+      top: calc(var(--hero-position) * -1);
+    transition: transform var(--duration-quick) ease-in-out;
+}
+
+@media screen and (min-width: 650px) {
+    .hero__our-story {
+        padding: 1.5rem 2rem;
+    }
+}
+
+.hero__our-story:hover {
+    transform: rotate(0);
+}
+
+.hero__attribution {
+    color: var(--color-forest);
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-top: 1rem;
+}
+
+
+/* SECTION */
+.section {
+/* outline: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+}
+
+@media screen and (min-width: 900px) {
+    .section--2up {
+        flex-direction: row;
+    }
+}
+
+.section--venue-and-hotel {
+    margin-top: calc(var(--hero-position) * -0.5);
+}
+
+.section--photos-and-registry {
+    margin-top: 1.5rem;
+}
+
+.section--timeline {
+    margin-top: 3rem;
+}
+
+/* SUBSECTION */
+.subsection {
+    margin: 1rem 0;
+    padding: 2rem;
+    width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+    .subsection {
+        margin: 1rem;
+        width: 50%;
+    }
+}
+
+.subsection--tilt-left {
+    transform: rotate(-1deg);
+    transition: transform var(--duration-quick) ease-in-out;
+}
+
+.subsection--tilt-right {
+    transform: rotate(1deg);
+    transition: transform var(--duration-quick) ease-in-out;
+}
+
+.subsection--tilt-left:hover,
+.subsection--tilt-right:hover {
+    transform: rotate(0);
+}
+
+.subsection__our-venue,
+.subsection__our-registry {
+    position: relative;
+      top: -1rem;
+}
+
+.subsection__our-venue {
+    background-color: var(--color-teal);
+    /* background: var(--color-teal) url("img/heart.png") no-repeat bottom 1.5rem left 1rem; */
+}
+
+.subsection__hotel-info {
+    background-color: var(--color-slime);
+    /* background: var(--color-slime) url("img/coffee.png") no-repeat top 1rem right 1rem; */
+    /* background-size: 55%; */
+}
+
+.subsection__our-registry {
+    background: var(--color-teal);
+}
+
+.subsection__photos {
+    background: var(--color-slime);
+}
+
+.subsection__our-venue a,
+.subsection__our-registry a {
+    color: var(--color-lemon);
+}
+
+.subsection__hotel-info a,
+.subsection__photos a {
+    color: var(--color-lemon);
+}
+
+.subsection__primary-link {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+a.subsection__secondary-link {
+    border-bottom: 2px dotted var(--color-obsidian);
+    color: var(--color-obsidian);
+    font-size: 1rem;
     text-decoration: none;
 }
 
-.calendar-invite-google:hover,
-.calendar-invite-google:focus {
+.subsection__secondary-link:hover,
+.subsection__secondary-link:focus {
+    border-bottom: none;
+}
+
+.subsection__errata {
+    margin-top: 0.75rem;
+}
+
+.subsection__transportation {
+    margin-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 850px;
+    text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+    .subsection__transportation {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.subsection__transportation p {
+    color: var(--color-forest);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.subsection__transportation a {
+    color: var(--color-obsidian);
+    transition: background-color var(--duration-slow) ease-in-out;
+}
+
+.subsection__transportation a:hover,
+.subsection__transportation a:focus {
+    background-color: var(--color-lemon);
     text-decoration: underline;
 }
 
-.venue {
-    font-size: 1.5em;
-    margin: 0;
-    padding: 0;
+
+/* TABLE */
+table {
+    border-collapse: collapse;
+    color: var(--color-forest);
+    width: 22rem;
 }
 
-.venue-more-info {
-    font-size: 0.8rem;
-    margin: 0.75rem 0 2rem 0;
-    padding: 0;
+table tbody tr {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-slime);
+    transition: background-color var(--duration-quick) ease-in-out;
 }
 
-.hotel-transport {
-    margin-top: 2rem;
+table tbody tr:hover {
+    background-color: var(--color-lemon);
 }
 
+table th,
+table td {
+    text-align: left;
+}
+
+table th:first-of-type {
+    text-align: right;
+}
+
+table th {
+    color: var(--color-obsidian);
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+table td {
+    padding: 1rem 1.5rem;
+}
+
+table td[scope="row"] {
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.am-pm {
+    font-size: 80%;
+    letter-spacing: var(--tracking-hairline);
+}
+
+
+/* MAP */
 .map {
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.map__toggle {
+    display: inline-block;
+    height: auto;
+    margin-right: 0.25rem;
+    position: relative;
+      top: 2px;
+    width: 1.25rem;
+}
+
+.map p {
+    color: var(--color-obsidian);
+    margin: 0 auto 1rem auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+.map__embed {
     width: 100%;
     height: 26rem;
-    margin-top: 2rem;
-}
-
-
-@media screen and (min-width: 900px) {
-    body {
-        font-size: 1.2em;
-    }
-
-    .hero {
-        max-width: 60vw;
-    }
 }
