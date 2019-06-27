@@ -125,18 +125,21 @@ img {
 .hero__our-story {
     background-color: var(--color-lemon);
     color: var(--color-forest);
-    width: 30rem;
-    padding: 1rem 4rem;
+    font-size: 85%;
+    padding: 1.25rem 2rem;
     text-align: center;
     transform: rotate(-2deg);
     position: relative;
       top: calc(var(--hero-position) * -1);
+    width: 85%;
     transition: transform var(--duration-quick) ease-in-out;
 }
 
 @media screen and (min-width: 650px) {
     .hero__our-story {
+        font-size: 1rem;
         padding: 1.5rem 2rem;
+        width: 30rem;
     }
 }
 
