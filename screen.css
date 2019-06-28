@@ -125,7 +125,7 @@ img {
 .hero__our-story {
     background-color: var(--color-lemon);
     color: var(--color-forest);
-    font-size: 85%;
+    font-size: 80%;
     padding: 1.25rem 2rem;
     text-align: center;
     transform: rotate(-2deg);
@@ -157,7 +157,6 @@ img {
 
 /* SECTION */
 .section {
-/* outline: 1px solid red; */
     display: flex;
     flex-direction: column;
     max-width: 1100px;
@@ -195,14 +194,27 @@ img {
     }
 }
 
+
 .subsection--tilt-left {
-    transform: rotate(-1deg);
+    transform: rotate(-0.5deg);
     transition: transform var(--duration-quick) ease-in-out;
 }
 
+@media screen and (min-width: 650px) {
+    .subsection--tilt-left {
+        transform: rotate(-1deg);
+    }
+}
+
 .subsection--tilt-right {
-    transform: rotate(1deg);
+    transform: rotate(0.5deg);
     transition: transform var(--duration-quick) ease-in-out;
+}
+
+@media screen and (min-width: 650px) {
+    .subsection--tilt-right {
+        transform: rotate(1deg);
+    }
 }
 
 .subsection--tilt-left:hover,
@@ -305,7 +317,13 @@ a.subsection__secondary-link {
 table {
     border-collapse: collapse;
     color: var(--color-forest);
-    width: 22rem;
+    width: 16rem;
+}
+
+@media screen and (min-width: 650px) {
+    table {
+        width: 22rem;
+    }
 }
 
 table tbody tr {
@@ -332,16 +350,31 @@ table th {
     padding: 1rem 1.5rem 0.5rem 1.5rem;
 }
 
+table tbody {
+    font-size: 0.8rem;
+}
+
+@media screen and (min-width: 650px) {
+    table tbody {
+        font-size: 0.9rem;
+    }
+}
+
 table tbody tr:last-of-type {
     border-bottom: none;
 }
 
 table td {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 650px) {
+    table td {
+        padding: 1rem 1.5rem;
+    }
 }
 
 table td[scope="row"] {
-    font-size: 0.9rem;
     text-align: right;
 }
 
@@ -368,11 +401,18 @@ table td[scope="row"] {
 
 .map p {
     color: var(--color-obsidian);
+    font-size: 0.8rem;
     margin: 0 auto 1rem auto;
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 600px;
     text-align: center;
+}
+
+@media screen and (min-width: 650px) {
+    .map p {
+        font-size: 1rem;
+    }
 }
 
 .map__embed {
