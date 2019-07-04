@@ -277,7 +277,8 @@ a.subsection__secondary-link {
 }
 
 .subsection__errata {
-    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    margin-top: 1rem;
 }
 
 .subsection__transportation {
