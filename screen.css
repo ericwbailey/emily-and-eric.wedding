@@ -63,7 +63,10 @@ img {
     text-transform: uppercase;
     font-size: 1.5rem;
     letter-spacing: var(--tracking-slight);
-    margin-bottom: 1rem;
+}
+
+.title__hero a {
+    color: var(--color-forest);
 }
 
 .title__subsection {
@@ -133,6 +136,10 @@ img {
       top: calc(var(--hero-position) * -1);
     width: 85%;
     transition: transform var(--duration-quick) ease-in-out;
+}
+
+.hero__our-story p:first-of-type {
+    margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 650px) {
@@ -445,7 +452,6 @@ table td[scope="row"] {
 .ride-banner code {
     background-color: #faeceb;
     border-radius: 7px;
-    letter-spacing: var(--tracking-slight);
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     padding: 0.25rem 0.5rem;
