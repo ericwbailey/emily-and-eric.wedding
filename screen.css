@@ -53,7 +53,7 @@ a:focus {
 }
 
 img {
-    width: 100%;
+    width: 100%; 
     height: auto;
 }
 
@@ -63,7 +63,10 @@ img {
     text-transform: uppercase;
     font-size: 1.5rem;
     letter-spacing: var(--tracking-slight);
-    margin-bottom: 1rem;
+}
+
+.title__hero a {
+    color: var(--color-forest);
 }
 
 .title__subsection {
@@ -133,6 +136,10 @@ img {
       top: calc(var(--hero-position) * -1);
     width: 85%;
     transition: transform var(--duration-quick) ease-in-out;
+}
+
+.hero__our-story p:first-of-type {
+    margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 650px) {
@@ -419,4 +426,37 @@ table td[scope="row"] {
 .map__embed {
     width: 100%;
     height: 26rem;
+}
+
+
+/* RIDE BANNER */
+.ride-banner {
+    background-color: #fba49e;
+    border-bottom: 0.3rem solid #faeceb;
+    color: #140754;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 1rem 1.75rem;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 650px) {
+    .ride-banner {
+        font-size: 1.3rem;
+        padding: 1.5rem 2.25rem;
+    }
+}
+
+.ride-banner code {
+    background-color: #faeceb;
+    border-radius: 7px;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.ride-banner__link {
+    color: #6744ff;
 }
